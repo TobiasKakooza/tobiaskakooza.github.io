@@ -1,3 +1,5 @@
+
+
 *{
 	padding: 0;
 	margin: 0;
@@ -292,7 +294,6 @@ footer p:nth-child(2){
 	width: 500px;
 	text-align: center;
 	line-height: 26px;
-
 }*/
 .socialmedia{
 	display: flex;
@@ -358,25 +359,25 @@ nav{
 	scroll-behavior: smooth;
 }
 #about-me.hover {
-    background: blue;
+    background: transparent;
 }
 #about-me.non-hover {
     background: white;
 }
 #Service.hover{
-	background: brown;
+	background: transparent;
 }
 #Service.non-hover{
 	background: dimgray;
 }
 #skill.hover{
-	background: orange;
+	background: transparent;
 }
 #skill.non-hover{
 	background: white;
 }
 #contact.hover{
-	background: orange;
+	background: transparent;
 }
 #contactb.non-hover{
 	background: white;
