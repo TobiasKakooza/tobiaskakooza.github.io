@@ -358,7 +358,7 @@ nav{
 nav{
 	scroll-behavior: smooth;
 }
-#about-me.hover {
+/*#about-me.hover {
     background: transparent;
 }
 #about-me.non-hover {
@@ -382,3 +382,4 @@ nav{
 #contactb.non-hover{
 	background: transparent;
 }
+*/
