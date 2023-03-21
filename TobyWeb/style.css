@@ -362,23 +362,23 @@ nav{
     background: transparent;
 }
 #about-me.non-hover {
-    background: white;
+    background: transparent;
 }
 #Service.hover{
 	background: transparent;
 }
 #Service.non-hover{
-	background: dimgray;
+	background: transparent;
 }
 #skill.hover{
 	background: transparent;
 }
 #skill.non-hover{
-	background: white;
+	background: transparent;
 }
 #contact.hover{
 	background: transparent;
 }
 #contactb.non-hover{
-	background: white;
+	background: transparent;
 }
