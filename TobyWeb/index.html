@@ -1,6 +1,8 @@
 <!DOCTYPE Html>
 
 <html>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 	<head>
 		<title>MY PERSONAL WEBSITE</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -57,7 +59,9 @@
 		<!----about me section----->
 		<section class="about" id="about-me">
 			<div class="main">
-				<img src="images/latest.jpg">
+				<!-- <img src="images/latest.jpg"> -->
+				<img src="images/latest.jpg" data-aos="zoom-in">
+
 			
 			<div class="about-view">
 				<h2>About Me</h2>
@@ -66,7 +70,21 @@
 				<!-- <button id="#plus-button">+</button> -->
 
 			</div>
+
 </div>
+<style>
+	
+	<script>
+AOS.init({
+  duration: 1000,
+  easing: 'ease-out-back',
+  once: true,
+  mirror: false,
+});
+
+</script>
+
+</style>
 
 		</section>
 		<!------services------>
