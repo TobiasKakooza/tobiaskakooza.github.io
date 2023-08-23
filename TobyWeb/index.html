@@ -46,13 +46,14 @@
 				<h4>HI, MY NAME IS </h4>
 				<h1>TOBIAS <span>KAKOOZA</span></h1>
 				<h3>I'M A FULL STACK DEVELOPER</h3>
-				<div class="newsletter">
-					<form>
-						<input type="email" name="email" id="mail" placeholder="Enter your email">
-						<input type="submit" name="submit" value="Lets see">
+			<div class="newsletter">
+    <form id="subscription-form">
+        <input type="email" name="email" id="mail" placeholder="Enter your email">
+        <input type="submit" name="submit" value="Subscribe">
+    </form>
+</div>
 
-					</form>
-			</div>
+
 		</div>
 
 		</div>
@@ -293,6 +294,27 @@ function onScroll(event){
 	$('#plus-button').click(function(){
 		$("#about-me").toggle();
 	});
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Get a reference to the form element
+    const form = document.getElementById("subscription-form");
+
+    // Add a form submit event listener
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the email value from the input field
+        const emailInput = document.getElementById("mail");
+        const email = emailInput.value;
+
+        // Perform your desired action with the email (e.g., display a message)
+        alert(`Subscribed with email: ${email}`);
+
+        // Optional: You can reset the form after submission
+        form.reset();
+    });
+});
+</script>
 
 
 
