@@ -1,7 +1,8 @@
-<!DOCTYPE Html>
-<html>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY PERSONAL WEBSITE</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,16 +11,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <!-----------Session commencement------->
     <div class="herosession">
         <nav>
             <h2 class="logo">TOBY<span>TECH</span></h2>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#about-me" class="active">About ME</a></li>
+                <li><a href="#about-me">About Me</a></li>
                 <li><a href="#Service">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact ME</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
             <a href="#" class="btnsubmit subscribe-button">Subscribe</a>
         </nav>
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    <!----about me section----->
+    
     <section class="about" id="about-me">
         <div class="main">
             <img src="images/latest.jpg" data-aos="zoom-in">
@@ -43,7 +43,7 @@
             </div>
         </div>
     </section>
-    <!------services------>
+    
     <div class="service" id="Service">
         <div class="title">
             <h2>My Services</h2>
@@ -53,43 +53,41 @@
                 <i class="fas fa-bars"></i>
                 <h5>Web Development</h5>
                 <div class="pra">
-                    <p> I'm in charge of ensuring web applications look good and function properly. I collaborate with website and graphic designers, monitor website traffic, troubleshoot website problems when they arise, and update websites as necessary.</p>
+                    <p>I'm in charge of ensuring web applications look good and function properly. I collaborate with website and graphic designers, monitor website traffic, troubleshoot website problems when they arise, and update websites as necessary.</p>
                 </div>
             </div>
             <div class="card">
                 <i class="fas fa-user"></i>
                 <h5>Android Development</h5>
                 <div class="pra">
-                    <p> I am responsible for designing and developing applications for the Android platform. I am proficient in programming languages such as Java and Kotlin and have experience with software development tools and methodologies.</p>
+                    <p>I am responsible for designing and developing applications for the Android platform. I am proficient in programming languages such as Java and Kotlin and have experience with software development tools and methodologies.</p>
                 </div>
             </div>
             <div class="card">
                 <i class="far fa-bell"></i>
                 <h5>Desktop Development</h5>
                 <div class="pra">
-                    <p> I am responsible for developing desktop applications using Microsoft's .NET framework. This involves designing, coding, testing, debugging and deploying software applications that run natively on Windows desktop operating systems.</p>
+                    <p>I am responsible for developing desktop applications using Microsoft's .NET framework. This involves designing, coding, testing, debugging and deploying software applications that run natively on Windows desktop operating systems.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!------------------Contactme-------------->
+    
     <div class="contact_me" id="contact">
-        <p>
-            Please Get in touch for any Tech Consultancy
-        </p>
+        <p>Please Get in touch for any Tech Consultancy</p>
         <a class="button-contact" id="contact-service" href="#">At Your Service!</a>
     </div>
-    <!--------------Skills------------------>
+    
     <section class="skills" id="skills">
         <div class="skills-container">
-            <h2><font color="white">Skills</font></h2>
+            <h2>Skills</h2>
             <div class="skills-list">
                 <div class="skills-category">
                     <h3>Programming Languages  ||   <span>Applications</span></h3>
                     <p>Android, Windows Store Apps, Java, ASP.NET, ASP.NET MVC, PHP, HTML5/CSS, Xaml/Xml, Linux, JavaScript, C#, C++, C</p>
                 </div>
                 <div class="skills-category">
-                    <h3>Data<span>bases</span></h3>
+                    <h3>Databases <span></span></h3>
                     <p>SQLite, MySQL, SQL Server, PostgreSQL</p>
                 </div>
                 <div class="skills-category">
@@ -99,17 +97,19 @@
             </div>
         </div>
     </section>
-    <!------------my footer-------->
+    
     <footer id="socials">
         <p>Tobias Kakooza</p>
         <p>For Any Inquiry, Please reach out using the links below</p>
         <div class="socialmedia">
-            <a href="https://twitter.com/tobiaskakooza"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/tobias-kakooza-45541a167/"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://wa.me/+256756566864"><i class="fa-brands fa-square-whatsapp"></i></a>
+            <a href="https://twitter.com/tobiaskakooza"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/tobias-kakooza-45541a167/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/+256756566864"><i class="fab fa-whatsapp-square"></i></a>
         </div>
         <p class="lastparagraph">&copy;<span id="current-year"></span>. All Rights Reserved Tobias Kakooza</p>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
@@ -126,7 +126,6 @@
             });
         });
     </script>
-    <!--Hovering through the sections-->
     <script>
         $(window).on('scroll', function() {
             var scrollTop = $(this).scrollTop();
@@ -143,7 +142,6 @@
             });
         });
     </script>
-    <!--Button hovering-->
     <script>
         $(document).ready(function(){
             $(document).on("scroll", onScroll);
@@ -181,7 +179,7 @@
             });
         });
     </script>
-    <style>
+     <style>
         .herosession {
             height: 100vh;
             width: 100%;
@@ -206,3 +204,5 @@
     </style>
 </body>
 </html>
+
+  
