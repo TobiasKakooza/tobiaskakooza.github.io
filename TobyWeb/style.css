@@ -3,6 +3,7 @@
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
     box-sizing: border-box;
+     transition: color 0.3s ease;
 }
 
 .herosession {
@@ -290,8 +291,9 @@ h5 {
 footer {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px;
     background: #101010;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,9 +351,12 @@ footer p:nth-child(2) {
 .skills-container {
     max-width: 1130px; /* Adjusted to match .main width */
     margin: 0 auto;
+}
+
+.skills-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Align items center removed */
+    justify-content: space-around;
 }
 
 .skills-category {
@@ -399,6 +404,16 @@ footer p:nth-child(2) {
     background-color: transparent;
     border: 2px solid #f9004d;
     cursor: pointer;
+}
+
+.skill-icon {
+    font-size: 40px;
+    color: #f9004d;
+    margin-bottom: 10px;
+}
+
+.skills-category-other {
+    order: 2;
 }
 
 
@@ -604,11 +619,12 @@ nav ul li a:hover {
     background-color: transparent;
     border: 2px solid #f9004d;
 }
-
 .contact_me {
     background-color: #191919;
     text-align: center;
     color: white;
+    padding: 300px 0; /* Further increased padding to make the section larger */
+    min-height: 100vh; /* Ensures the section fills at least the viewport height */
 }
 
 .contact_me p {
@@ -625,12 +641,20 @@ nav ul li a:hover {
     border-radius: 30px;
     transition: .4s;
     display: inline-block;
+    font-size: 18px; /* Slightly increased font size for the button */
 }
 
 .contact_me .button-contact:hover {
     background-color: transparent;
     border: 2px solid #f9004d;
 }
+
+/* Adjusting the spacing of other sections */
+.skills {
+    margin-top: 0; /* Reset margin to avoid any overlap */
+}
+
+
 
 .skills {
     text-align: center;
@@ -846,15 +870,25 @@ nav ul li a:hover {
     color: #f9004d;
 }
 
-.logo {
-    color: white;
-    font-size: 35px;
-    letter-spacing: 1px;
-    cursor: pointer;
+/* Logo text color and styling */
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 35px; /* Adjust font size */
+    font-weight: bold; /* Adjust font weight */
+    display: flex;
+    align-items: center;
 }
 
-.logo span {
-    color: #f9004d; /* Color for the span */
+/* Span for custom color */
+.logo a span {
+    color: #f9004d; /* Your custom color */
+    display: block;
+}
+
+/* Adjust the hover effect for the logo */
+.logo a:hover {
+    color: #f9004d; /* Hover color */
 }
 
 /* Button styles */
@@ -873,4 +907,4 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* Additional styles for content, newsletter, about, etc. as needed */
+
