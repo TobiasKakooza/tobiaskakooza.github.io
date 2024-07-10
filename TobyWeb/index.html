@@ -12,9 +12,13 @@
 </head>
 <body>
     <div class="herosession">
-        <nav>
-            <h2 class="logo">TOBY<span>TECH</span></h2>
-            <ul>
+        <nav class="transparent-nav">
+            <h2 class="logo"><a href="index.html">TOBY<span>TECH</span></a></h2>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#Service">Services</a></li>
@@ -83,14 +87,17 @@
             <h2>Skills</h2>
             <div class="skills-list">
                 <div class="skills-category">
+                    <i class="fas fa-laptop-code skill-icon"></i>
                     <h3>Programming Languages  ||   <span>Applications</span></h3>
                     <p>Android, Windows Store Apps, Java, ASP.NET, ASP.NET MVC, PHP, HTML5/CSS, Xaml/Xml, Linux, JavaScript, C#, C++, C</p>
                 </div>
                 <div class="skills-category">
-                    <h3>Databases <span></span></h3>
-                    <p>SQLite, MySQL, SQL Server, PostgreSQL</p>
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3>Data<span>bases</span></h3>
+                    <p>SQLite, MySQL, SQL Server, PostgreSQL, Oracle</p>
                 </div>
-                <div class="skills-category">
+                <div class="skills-category skills-category-other">
+                    <i class="fas fa-cogs skill-icon"></i>
                     <h3>Other <span>Skills</span></h3>
                     <p>Software Engineering Principles, Data Security, Computer Hardware Knowledge, Technical Support, Networks, Relational Database Management, Communication, Analytical Abilities, Problem Solving, Cloud Computing</p>
                 </div>
@@ -111,58 +118,25 @@
     
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        AOS.init();
     </script>
     <script>
         $(document).ready(function(){
-            $(document).on('click','a[href^="#"]',function(event){
-                event.preventDefault();
+            $(document).on('click', 'a[href^="#"]', function(event){
                 var target = $(this.hash);
                 if (target.length) {
+                    event.preventDefault(); // Prevent default only for internal links
                     $('html, body').animate({
                         scrollTop: target.offset().top
                     }, 500);
+                    // Close the mobile menu when a link is clicked (for mobile view)
+                    $('.nav-toggle').prop('checked', false);
                 }
             });
-        });
-    </script>
-    <script>
-        $(window).on('scroll', function() {
-            var scrollTop = $(this).scrollTop();
-            var sections = ['#about-me', '#Service', '#skills', '#contact'];
-            sections.forEach(function(section) {
-                var sectionElement = $(section);
-                var sectionTop = sectionElement.offset().top;
-                var sectionBottom = sectionTop + sectionElement.outerHeight();
-                if (scrollTop > sectionTop && scrollTop < sectionBottom) {
-                    sectionElement.addClass('hover');
-                } else {
-                    sectionElement.removeClass('hover');
-                }
+            $('.logo a').click(function() {
+                console.log('Clicked on TOBY TECH logo');
             });
         });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $(document).on("scroll", onScroll);
-            $("nav a").click(function(){
-                $("nav a").removeClass("active");
-                $(this).addClass("active");
-            });
-        });
-        function onScroll(event){
-            var scrollPos = $(document).scrollTop();
-            $("nav a").each(function () {
-                var currLink = $(this);
-                var refElement = $(currLink.attr("href"));
-                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                    $("nav a").removeClass("active");
-                    currLink.addClass("active");
-                } else {
-                    currLink.removeClass("active");
-                }
-            });
-        }
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -170,7 +144,8 @@
             subscribeButtons.forEach(button => {
                 button.addEventListener("click", function(event) {
                     event.preventDefault();
-                    window.location.href = "https://www.youtube.com/@TobyDev_";
+                    var footer = document.getElementById('socials');
+                    footer.scrollIntoView({ behavior: 'smooth' });
                 });
             });
             document.getElementById("contact-service").addEventListener("click", function(event) {
@@ -179,13 +154,102 @@
             });
         });
     </script>
-     <style>
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Tawk.to Script -->
+<!--     <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/668e59817a36f5aaec96a390/1i2e0r8rm';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script> -->
+    <style>
         .herosession {
             height: 100vh;
             width: 100%;
             background-image: url(images/profiled.jpg);
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        .transparent-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1); /* Adjust transparency here */
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .transparent-nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* Fully visible color on scroll */
+        }
+        .nav-toggle {
+            display: none;
+        }
+        .nav-toggle-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure above nav */
+        }
+        .nav-toggle-label span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            transition: transform 0.3s ease;
+        }
+        .nav-toggle:checked + .nav-toggle-label span {
+            transform: rotate(45deg);
+        }
+        .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            width: 180px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .nav-menu li {
+            margin-bottom: 20px;
+        }
+        .nav-menu li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav-menu li a:hover {
+            color: #f9004d;
+        }
+        .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+            transform: translateX(0);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-top: 80px; /* Adjust top padding to avoid overlapping with transparent nav */
+            text-align: center; /* Center content vertically */
+            color: #fff; /* Adjust text color */
         }
         .subscribe-button {
             display: inline-block;
@@ -204,5 +268,3 @@
     </style>
 </body>
 </html>
-
-  
