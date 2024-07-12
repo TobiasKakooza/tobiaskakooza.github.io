@@ -157,18 +157,6 @@
     <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
-    <!-- Tawk.to Script -->
-<!--     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/668e59817a36f5aaec96a390/1i2e0r8rm';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script> -->
     <style>
         .herosession {
             height: 100vh;
@@ -210,6 +198,9 @@
         .nav-toggle:checked + .nav-toggle-label span {
             transform: rotate(45deg);
         }
+        .nav-toggle:checked + .nav-toggle-label span::before {
+            transform: rotate(-45deg);
+        }
         .nav-menu {
             list-style-type: none;
             margin: 0;
@@ -217,7 +208,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-color: transparent;
+            background-color: rgba(255, 255, 255, 0.9); /* Ensure the menu is visible */
             width: 180px;
             height: 100vh;
             display: flex;
@@ -264,6 +255,17 @@
         }
         .subscribe-button:hover {
             background-color: #d10040;
+        }
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                width: 100%;
+            }
+            .nav-toggle-label span {
+                width: 25px;
+            }
+            .nav-menu li a {
+                font-size: 16px;
+            }
         }
     </style>
 </body>
